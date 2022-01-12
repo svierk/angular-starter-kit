@@ -1,6 +1,11 @@
 {
   "name": "angular-starter-kit",
   "version": "0.0.0",
+  "author": {
+    "name": "Sebastiano Vierk",
+    "url": "https://github.com/svierk"
+  },
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
