@@ -1,12 +1,16 @@
 # 🚀 Angular Starter Kit
 
-The repository provides a template for Angular projects which includes an initial configuration of Prettier, Linter rules, unit tests as well as VS code settings.
+The repository provides a template for Angular projects which includes an initial configuration of Prettier, Linter rules, unit tests as well as VS Code settings.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+## Getting started
+
+To get the template up and runnning locally, all you need to do is open the repository with VS Code, install all the recommended extensions and run `npm install` to install all required dependencies.
+
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` or `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -14,11 +18,19 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm run build` or `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Prettier
+
+Run `npm run prettier` to check for _Prettier_ issues and `npm run prettier:fix` to automatically fix those _Prettier_ issues.
+
+## Linter
+
+Run `npm run lint` to check for _ESLint_ issues and `npm run lint:fix` to automatically try to fix those _ESLint_ issues.
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `npm run test` or `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io) in watch mode. By running `npm run test:coverage` you can execute all unit tests with code coverage.
 
 ## Running end-to-end tests
 
