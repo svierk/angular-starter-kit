@@ -12,6 +12,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:coverage": "ng test --watch=false --code-coverage",
     "lint": "ng lint --max-warnings 0",
     "lint:fix": "ng lint --fix",
     "prettier": "prettier \"**/*.(ts|scss|html|js|json|yaml)\" --check",
@@ -56,6 +57,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "karma-junit-reporter": "^2.0.1",
     "prettier": "^2.5.1",
     "typescript": "~4.4.4"
   }
