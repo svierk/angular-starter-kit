@@ -1,12 +1,16 @@
 # 🚀 Angular Starter Kit
 
-The repository provides a template for Angular projects which includes an initial configuration of Prettier, Linter rules, unit tests as well as VS Code settings.
+The repository provides a template for Angular projects which includes an initial configuration of Prettier, Linter rules, git hooks and unit tests as well as VS Code settings.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
 ## Getting started
 
 To get the template up and runnning locally, all you need to do is open the repository with VS Code, install all the recommended extensions and run `npm install` to install all required dependencies.
+
+## Git hooks
+
+The project includes client-side pre-commit git hooks using [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged). After installing all project dependencies, Prettier and Linter are automatically executed before each commit.
 
 ## Development server
 
