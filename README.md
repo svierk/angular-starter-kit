@@ -1,8 +1,18 @@
 # 🚀 Angular Starter Kit
 
+![GitHub](https://img.shields.io:/github/license/svierk/angular-starter-kit)
+![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white)
+![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?logo=reactivex&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?logo=visual-studio-code&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?logo=eslint&logoColor=white)
+![Jasmine](https://img.shields.io/badge/jasmine-%238A4182.svg?logo=jasmine&logoColor=white)
+
+## About the project
+
 The repository provides a template for Angular projects which includes an initial configuration of Prettier, Linter rules, git hooks and unit tests as well as VS Code settings.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project was generated with the [Angular CLI](https://github.com/angular/angular-cli).
 
 ## Getting started
 
