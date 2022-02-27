@@ -1,6 +1,8 @@
 # 🚀 Angular Starter Kit
 
 ![GitHub](https://img.shields.io:/github/license/svierk/angular-starter-kit)
+![GitHub CI](https://github.com/svierk/angular-starter-kit/actions/workflows/ci.yaml/badge.svg)
+
 ![Angular](https://img.shields.io/badge/angular-%23DD0031.svg?logo=angular&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?logo=typescript&logoColor=white)
 ![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?logo=reactivex&logoColor=white)
