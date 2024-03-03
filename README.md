@@ -1,6 +1,6 @@
 # 🚀 Angular Starter Kit
 
-![GitHub CI](https://github.com/svierk/angular-starter-kit/actions/workflows/ci.yaml/badge.svg)
+![GitHub CI](https://github.com/svierk/angular-starter-kit/actions/workflows/ci.yml/badge.svg)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=svierk_angular-starter-kit&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=svierk_angular-starter-kit)
 [![codecov](https://codecov.io/gh/svierk/angular-starter-kit/branch/main/graph/badge.svg?token=W0VGTTH1VJ)](https://codecov.io/gh/svierk/angular-starter-kit)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsvierk%2Fangular-starter-kit.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsvierk%2Fangular-starter-kit?ref=badge_shield)
