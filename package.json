@@ -23,8 +23,8 @@
     "lint:fix": "ng lint --fix",
     "prettier": "prettier \"**/*.(ts|scss|html|js|json|yaml)\" --check",
     "prettier:fix": "prettier \"**/*.(ts|scss|html|js|json|yaml)\" --write",
-    "postinstall": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "prepare": "husky"
   },
   "lint-staged": {
     "src/**/*.{ts,scss,html}": [
