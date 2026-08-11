@@ -1,4 +1,11 @@
-name: Build
+name: Validation
+
+# Validates changes to this repository: checks formatting with Prettier, lints
+# the sources with ESLint, runs the unit tests with coverage and builds the app.
+#
+# Every `uses:` reference is pinned to an exact release tag so an update is
+# always an explicit, reviewable change of that pin - Dependabot keeps the pins
+# current (see .github/dependabot.yml).
 
 on:
   push:
@@ -7,36 +14,64 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Least-privilege token: this workflow only reads the repository.
 permissions:
   contents: read
 
 jobs:
   build:
+    # The job name is the status check context required by the `main` ruleset -
+    # renaming it means updating the required status checks as well.
     name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v7.0.1
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # full history: required for the Sonar analysis (new code detection)
+          persist-credentials: false # the GITHUB_TOKEN is not needed after the checkout - don't leave it in .git/config
+
+      # NODE_VERSION_OVERRIDE is a repository variable; unset it to fall back
+      # to engines.node from package.json, populate it to pin a version
+      # without touching this workflow file.
       - name: Select Node Version
-        uses: svierk/get-node-version@main
+        uses: svierk/get-node-version@v1.5.1
+        with:
+          node-version: ${{ vars.NODE_VERSION_OVERRIDE }}
+
+      # `npm ci` installs exactly what package-lock.json pins and never rewrites
+      # it; --ignore-scripts keeps install hooks of third-party packages from
+      # executing on the runner.
       - name: Install Dependencies
-        run: npm install --ignore-scripts
+        run: npm ci --ignore-scripts
+
       - name: Check Prettier
         run: npm run prettier
+
       - name: Check ESLint
         run: npm run lint
+
       - name: Unit Tests
         run: npm run test:ci
+
+      # Pull requests from forks have no access to secrets, so the two upload
+      # steps below are skipped in that context. The rest of the pipeline still
+      # runs, which keeps the required "Build" check meaningful - and passable -
+      # for external contributions.
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@master
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        uses: SonarSource/sonarqube-scan-action@v8.2.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # SONAR_TOKEN is the only credential the scanner needs: pull request
+          # decoration is done server-side by the SonarCloud GitHub App, so no
+          # GITHUB_TOKEN has to be handed to this action.
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
       - name: Codecov Coverage Upload
-        uses: codecov/codecov-action@main
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        uses: codecov/codecov-action@v7.0.0
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Build
         run: npm run build
