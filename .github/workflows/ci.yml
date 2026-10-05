@@ -60,7 +60,7 @@ jobs:
       # for external contributions.
       - name: SonarCloud Scan
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-        uses: SonarSource/sonarqube-scan-action@v8.2.2
+        uses: SonarSource/sonarqube-scan-action@v8.3.0
         env:
           # SONAR_TOKEN is the only credential the scanner needs: pull request
           # decoration is done server-side by the SonarCloud GitHub App, so no
