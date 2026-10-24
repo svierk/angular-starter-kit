@@ -110,7 +110,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    transition: all 0.2s ease-in-out;
+    transition:
+      transform 0.2s ease-in-out,
+      box-shadow 0.2s ease-in-out,
+      color 0.2s ease-in-out;
     line-height: 24px;
   }
 
@@ -228,7 +231,9 @@
     box-shadow:
       0 1px 3px rgba(0, 0, 0, 0.12),
       0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: 1s ease-out;
+    transition:
+      transform 1s ease-out,
+      box-shadow 1s ease-out;
   }
 
   .circle-link:hover {
@@ -748,7 +753,7 @@
         Star
       </div>
     </a>
-    <a href="https://github.com/angular/angular" target="_blank" rel="noopener">
+    <a aria-label="Angular on GitHub" href="https://github.com/angular/angular" target="_blank" rel="noopener">
       <svg
         aria-hidden="true"
         class="material-icons"
